@@ -1,0 +1,28 @@
+.oneCard {
+    width: 500px;
+    border: solid 1px black;
+    padding: 25px;
+    border-radius: 8px;
+    margin: 15px;
+}
+
+.oneImg {
+    width: 500px;
+    height: 380px;
+    border-radius: 8px;
+    margin: 0 auto;
+}
+
+.oneCardTitle {
+    font-size: 36px;
+}
+
+.oneCardText {
+    font-size: 14px;
+    color: black;
+}
+
+.oneCardDate {
+    font-size: 26px;
+    color: black;
+}
