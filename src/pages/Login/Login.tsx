@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import './Login.css';
 import Input from "../../components/Input";
 import Button from "../../components/Button";
 
 
 const Login = ( ) => {
+    const [tabName, setTabName] = useState('login')
+    const onHeaderButtonClick = (name:string) => {
+        setTabName(name)
+    }
     return (
+      
         <div className="login">
             <div className="loginTitle">
                <div><h3 className="loginLogin">Login </h3></div>
