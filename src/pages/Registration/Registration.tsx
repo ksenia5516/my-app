@@ -4,6 +4,7 @@ import "./Registration.css";
 import Button from "../../components/Button";
 import Input from "../../components/Input";
 import { Theme, useThemeContaxt } from "../../context/themeModeContext";
+import { Navigate, useNavigate } from 'react-router-dom'
 
 //const Registration: FC<> = ({onClick,onConfirmClick,})
 
@@ -13,6 +14,10 @@ const Registration = () => {
   const onClickTheme = () => {
     onChangeTheme(Theme.Dark);
   };
+
+  //const onSubmit = () => {
+  //  navigate("/confirm")
+ // }
   return (
     <div
       className={classNames("registration", {
