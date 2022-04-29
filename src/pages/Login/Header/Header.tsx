@@ -1,8 +1,8 @@
-import classNames from 'classnames'
+// import classNames from 'classnames'
 
-type HeaderProps = {
-    onClick:(name: string) => void;
-}
-const Header = ({onClick}) =>{
+// type HeaderProps = {
+//     onClick:(name: string) => void;
+// }
+// const Header = ({onClick}) =>{
     
-}
+// }
