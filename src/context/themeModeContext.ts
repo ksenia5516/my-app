@@ -16,4 +16,4 @@ export type ThemeContextType ={
 }
 export const ThemeContext = React.createContext<ThemeContextType>(defaultValue)
 
-export const useThemeContaxt = () => useContext(ThemeContext)
+export const useThemeContext = () => useContext(ThemeContext)

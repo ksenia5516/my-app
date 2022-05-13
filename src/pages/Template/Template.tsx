@@ -2,15 +2,12 @@ import React from 'react';
 import './Template.css'
 import Button from '..//..//components/Button';
 
-const Template = () => { 
-    return (
-        <div className='templateThemeDark'>
-            <div className='temp'>
-                <h1>Template title</h1>
-                <h2>Template body</h2>
-                <Button text = {'button'}></Button>
-            </div>
-        </div>
-    )
+const Template = (props: any) => { 
+    return <div className='templateThemeDark'>
+  <h1 className='templateTitle'>Template title</h1>
+  <p> Template body </p>
+        <Button className='btnTemplate' btnText='Change theme' />
+    </div>
+
 }
 export default Template

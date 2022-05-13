@@ -1,24 +1,34 @@
 import React from 'react';
-import './Confirmation.css'
-import Button from "../../components/Button";
-import { useLocation } from 'react-router-dom'
+import './Confirmation.css';
+import Button from '../../components/Button';
+import {Link, useLocation, useNavigate} from 'react-router-dom'
+import TumblerSwitch from '../../components/TumblerSwitch'
+import classNames from 'classnames';
+import { Theme, useThemeContext } from '../../context/themeModeContext';
 
-const Confirmation = (prors:any) => {
 
-    const location: any = useLocation()
-    const onHomeClick = () =>{ localStorage.setItem("isLoggerIn", "true")
-window.location.replace("/card-list")
-}
+const Confirmation = () => {
+    const { theme, onChangeTheme = () => {} } = useThemeContext();
+    const isLightTheme = theme === Theme.Light;
+    const location: any = useLocation();
+    console.log(location.state.email);
     
-return (
-    <div className="confirmation">
-        <h2 className="confirmationTitle">Registration Confirmation</h2>
-        <p className="confirmationText">Please activate your account with the activation link in the email
-           {" "} <Button className={"btnLink"} value={location?.state?.email??' '}/>
-        Please check your email
-</p>
-<Button text={'Home'}></Button>
-    </div>
-)
-};
+    const onHomeClick = () => {
+      localStorage.setItem("isLoggedIn", "true");
+      window.location.replace("/cards-list");
+    };
+
+    return (
+      <div className={classNames( {['confirmation']:isLightTheme}, {['confirmationDark'] : !isLightTheme})}>
+          <TumblerSwitch/>
+        <h1 className="confirmationTitle">Registration Confirmation</h1>
+        <div className="confirmationMessage">
+          <p>Please activate your account with the activation link in the
+          email{''} <Button className='btnLink' btnText={location?.state?.email ?? ''} />  Please, check your email</p>
+        </div>
+        <Button className='btnConfirmation' btnText='Home' onClick={onHomeClick}/>
+      </div>
+    );
+  };
+  
 export default Confirmation;
