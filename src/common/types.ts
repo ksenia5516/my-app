@@ -56,7 +56,7 @@ const products: Products = [
     {
         id: 2,
         name: "Burger Lite",
-        price: "2,3",
+        price: 2,
         currency: "euro",
         ingredients: ["flour", "beef", "cheese", "sauce", "cucumber"],
         type: "burger",
@@ -149,7 +149,7 @@ sortCountry(countries)
 
 // 4. Получить массив валют.
 
-type CurrCounty = (countries: Country[]) => string[]
+type CurrCounty = (countries: Country[]) => string
 const currCoutry: CurrCounty = (countries) => {
     let names = ""
     countries.forEach((i) => {
@@ -164,7 +164,7 @@ currCoutry(countries)
 
  type SortCity = (countries: Country[]) => string[]
  const sortCity: SortCity = (countries) => {
-    let names = countries.map((a) => a.city).sort()
+    let names = countries.map((a) => a.city).sort() //let rez = arr.slice().sort()
     console.log(names)
     return names;
 }
@@ -182,54 +182,3 @@ const averagePeople: AveragePeople = (countries) => {
     return count
 }
 averagePeople(countries)
-
-
-//////////////////////////////////////////////////////////////////////////////////
-
-// HOMEWORK
-
-// С ниже приведенным массивом решить следующие задачи. Все функции и данные должны быть протипизированы:
-//     1. Создать строку из имен пользователей через запятую
-//     2. Посчитать общее количнство машин у пользователей
-//     3. Создать функцию, которая бы принимала массив пользователей и отфильтровывала пользователей на наличие образования
-//     4. Создать функцию, которая бы принимала массив пользователей и отфильтровывала пользователей на наличие животных
-//     5. Создать функцию, которая бы принимала массив пользователей и отдавала бы  строку с названиями марок автомобилей через запятую
-
-type User2 = { 
-name: string,
-phone: number,
-email: string,
-animals?: string[],
-cars?: string[],
-hasChildren: boolean,
-hasEducation: boolean }
-
-type Users2 = User2[]
-
-const users2: Users2 = [
-    {
-        name: "Harry Felton",
-        phone: 098973333,
-        email: "felton@gmail.com",
-        animals: ["cat"],
-        cars: ["bmw"],
-        hasChildren: false,
-        hasEducation: true
-        
-    },
-    {
-        name: "May Sender",
-        phone: 098973333,
-        email: "sender22@gmail.com",
-        hasChildren: true,
-        hasEducation: true
-    },
-    {
-        name: "Henry Ford",
-        phone: 098973333,
-        email: "ford0@gmail.com",
-        cars: ["bmw", "audi"],
-        hasChildren: true,
-        hasEducation: false
-    }
-]

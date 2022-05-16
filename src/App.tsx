@@ -13,24 +13,28 @@ import { Theme } from './context/themeModeContext'
 import {useState} from 'react';
 import Router from './pages/Router';
 import classNames from 'classnames';
+import { Provider} from 'react-redux'
+import { store } from "./redux/store";
 
 function App() {
-  const [theme, setTheme] = useState (Theme.Light)
-  const isLightTheme = theme ===Theme.Light;
-  const onChangeTheme = (value: Theme) => {
-  setTheme(value);
-  }
+  // const [theme, setTheme] = useState (Theme.Light)
+  // const isLightTheme = theme ===Theme.Light;
+  // const onChangeTheme = (value: Theme) => {
+  // setTheme(value);
+  //}
     return (
-  <ThemeModeProvider theme={theme} onChangeTheme={onChangeTheme}>
-   <div className='App'>
-  <Router/>
-  </div>
-  </ThemeModeProvider>
-    );
-  }
-  const [theme, setTheme] = useState(Theme.Light)
-  const onChangeTheme = (value: Theme) => {
-    setTheme(value);
+    <Provider store = {store}></Provider>)
+    //(
+  // <ThemeModeProvider theme={theme} onChangeTheme={onChangeTheme}>
+  //  <div className='App'>
+  // <Router/>
+  // </div>
+  // </ThemeModeProvider>
+   // );
+//  }
+  // const [theme, setTheme] = useState(Theme.Light)
+  // const onChangeTheme = (value: Theme) => {
+  //   setTheme(value);
   };
 //   return (
 // <ThemeModeProvider theme = {theme} onChangeTheme = {onChangeTheme}>

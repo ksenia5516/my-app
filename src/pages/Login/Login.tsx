@@ -2,6 +2,7 @@ import React, {FC, useEffect, useState } from 'react';
 import './Login.css';
 import Button from '..//..//components//Button';
 import Input from '..//..//components//Input';
+import {useDispatch, useSelector} from 'react-redux'
 
 type LoginProps = {
     onClick: (name: string) => void;
@@ -17,6 +18,14 @@ const [password, setPassword] = useState ('');
 const [emailError, setEmailError] = useState ('');
 const [passwordError, setPasswordError] = useState ('');
 const [formValid, setFormValid] = useState (false);
+
+const dispatch = useDispatch();
+const onClick = (isPlus: boolean) => {
+    const PLUS_ACTION = { type: "counter/incremented" };
+    const MINUS_ACTION = { type: "counter/decremented" };
+    dispatch(isPlus ? PLUS_ACTION : MINUS_ACTION);
+  };
+const value = useSelector((state: any) => state.value)
 
 useEffect(()=> {
 if (emailError || passwordError) {
@@ -69,7 +78,10 @@ return (
     <p className="passwordForgotText">Forgot your password?</p>
     <a href="#reset" className="passwordForgotReset">Reset password</a>
 </div>
-   
+
+<Button className="btm" value={"ПЛЮС"} onClick = {() => onClick} />
+<Button className="btm" value={"МИНУС"} onClick = {() => onClick} />
+<div style = {{fontSize: 20, fontWeight: 'bolt'}}>{value}</div>
 </form>
 )
 }
