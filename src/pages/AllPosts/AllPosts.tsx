@@ -1,7 +1,7 @@
 import React from 'react';
 import './AllPosts.css';
-import CardPost from '..//..//components//CardPost'; 
-import { useParams } from 'react-router-dom';
+import CardPost from '..//..//components//CardPost';
+import { useParams, Link, NavLink } from 'react-router-dom';
 import { Theme, useThemeContext } from '../../context/themeModeContext';
 import classNames from 'classnames';
 
@@ -49,24 +49,12 @@ const AllPosts = () => {
         title: "Lorem",
       },
     ]
-
-   const {id} = useParams ();
-  
-   const newItem = date.find((post:any) => post.id == id)
-
     return (
-      <div className={classNames( {['allPostsContainer']:isLightTheme}, {['allPostsContainer dark'] : !isLightTheme})}>
-        <div className="contentTitle">Content title</div>
-        <div className="cardPostContent">
-        {newItem && <CardPost key={id}
-                     image={newItem.image}
-                     title={newItem.title}
-                     text={newItem.text}
-                     date={newItem.date} 
-                    /> }
-        </div>
-      </div>
-    );
-};
+      <div className={classNames( {['postsContainer']:isLightTheme}, {['postsContainer dark'] : !isLightTheme})}>
+      <div className='postsTitle'>My posts</div>
+         <CardPost data={date}/>
+         </div>
+     )
+     }
   
 export default AllPosts;

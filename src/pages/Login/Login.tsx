@@ -59,6 +59,12 @@ const passValid = (event: any) => {
        setPasswordError ('')
     }
 }
+const onClickRed = (isPlus: boolean) => {
+    const PLUS_ACTION = { type: "counter/incremented" };
+    const MINUS_ACTION = { type: "counter/decremented" };
+    dispatch(isPlus ? PLUS_ACTION : MINUS_ACTION);
+  };
+
 return ( 
     <form className="formLogin">
     <div className="formEmail">
@@ -79,8 +85,8 @@ return (
     <a href="#reset" className="passwordForgotReset">Reset password</a>
 </div>
 
-<Button className="btm" value={"ПЛЮС"} onClick = {() => onClick} />
-<Button className="btm" value={"МИНУС"} onClick = {() => onClick} />
+ <Button className='btm' value={'PLUS'} onClick={()=> onClickRed( true)} btnText='+'/>
+   <Button className='btm' value={'MINUS'} onClick={()=> onClickRed(false)}btnText='-'/>
 <div style = {{fontSize: 20, fontWeight: 'bolt'}}>{value}</div>
 </form>
 )

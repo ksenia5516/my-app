@@ -3,8 +3,8 @@ import './CardPost.css'
 import classNames from 'classnames';
 
 type CardPostType = {
-  id: string
-  image: string
+  id?: string
+  image?: string
   title: string
   text: string
   date: string

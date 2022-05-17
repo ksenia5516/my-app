@@ -1,0 +1,67 @@
+.infoWrap {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    color: #504197;
+}
+
+.infoWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px 35px;
+    height: 100vh;
+}
+
+.dark {
+    background-color: #240915;
+}
+
+.btnInfo {
+    margin-right: 8px;
+    padding: 8px;
+    width: 70px;
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    text-align: center;
+    background-color: gray;
+    color: white;
+    cursor: pointer;
+}
+
+.activeTabs {
+    background-color: #5d5485;
+}
+
+.dark .activeTabs {
+    background-color: #fdd892;
+}
+
+.infoContent {
+    display: none;
+}
+
+.activeContent {
+    display: block;
+}
+
+.infoTitle {
+    font-size: 24px;
+    padding-left: 0px;
+    color: #5d5485;
+    font-weight: 700;
+}
+
+.dark .infoTitle {
+    color: white;
+}
+
+.infoContentWrapper {
+    background-color: rgb(159, 157, 157);
+    width: 30%;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    font-size: 12px;
+}
