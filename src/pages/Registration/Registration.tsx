@@ -8,19 +8,19 @@ import { Navigate, useNavigate } from 'react-router-dom'
 
 //const Registration: FC<> = ({onClick,onConfirmClick,})
 
-type RegistrationForm = {
-  onClick: () => void;
-  onConfirmClick: () => void;
+type PropsRegistrationForm = {
+  onClick: (name:string) => void;
+  onClickConfirm: () => void,
 }
-
-const Registration: FC<RegistrationForm> = ({
+const RegistrationForm: FC<PropsRegistrationForm> = ({
   onClick,
-  onConfirmClick,
+  onClickConfirm,
 }) => {
   const { theme, onChangeTheme = () => {} } = useThemeContext();
   const isLightTheme = theme === Theme.Light;
   const onClickTheme = () => {
     onChangeTheme(Theme.Dark);
+  }
     const navigate = useNavigate()
     const [email, setEmail] = useState ('');
     const [password, setPass] = useState ('');
@@ -73,7 +73,7 @@ if (setPass(event.target.value) != setPassConfirm(event.target.value)){
     setPassErrorConfirm('')
 }
     }
-  onConfirmClick = () => {
+  onClickConfirm = () => {
         navigate("/confirm",  {
             state: {
               email,
@@ -107,7 +107,7 @@ if (setPass(event.target.value) != setPassConfirm(event.target.value)){
         {passwordErrorConfirm && <div className='err'>{passwordErrorConfirm}</div>}
     </div>
     <div >
-        <Button disabled={!formValid} className='btnLoginConfirm' btnText='Login' onClick={onConfirmClick}/>
+        <Button disabled={!formValid} className='btnLoginConfirm' btnText='Login' onClick={onClickConfirm}/>
     </div>
 </form>
 <div className="login-forgot">
@@ -117,5 +117,4 @@ if (setPass(event.target.value) != setPassConfirm(event.target.value)){
     </div>
   );
 };
-};
-export default Registration;
+export default RegistrationForm;

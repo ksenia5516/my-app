@@ -8,10 +8,9 @@ type CardPostType = {
   title: string
   text: string
   date: string
-  
+  onclick?: () => void
   }
 const CardPost: FC <CardPostType> =  ({id, image, title, text, date}) => {
-  
     const img ="https://cdn.pixabay.com/photo/2020/02/25/09/57/road-4878453_1280.jpg";
 return (
 
@@ -20,6 +19,9 @@ return (
       <p className="titleCard">{title}</p>
       <p className="textCard">{text}</p>
       <p className="datteCard">{date}</p>
+      <div>{'Like'}</div>
+  <div>{'Dislike'}</div>
+  <div>{'Save'}</div>
   </div>
 )
 }

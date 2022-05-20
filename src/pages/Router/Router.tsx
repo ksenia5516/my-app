@@ -7,6 +7,7 @@ import PageOneCard from '../PageOneCard';
 import Auth from "..//Auth";
 import Confirmation from "../Confirmation";
 import Registration from "../Registration";
+import CardList from '..//..//components//CardList'
 
 
 const Router = () => {
@@ -16,8 +17,8 @@ const Router = () => {
     {isLoggedIn?(
         <Routes> 
         <Route path={'/'} element={<Header/>}>
-            <Route path={'cards-list'} element={<PageOneCard/>}/>
-           
+            <Route path={'cards-list'} element={<CardList/>}/>
+       
             <Route path={'info'} element={<Information/>}/>
             <Route path='*' element={<Navigate to="/" replace/>}/>
         </Route>

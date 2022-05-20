@@ -1,12 +1,8 @@
-import {legacy_createStore as createStore, combineReducers,compose,} from "redux";
-  
-  declare global {
-    interface Window {
-      __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: typeof compose;
-    }
-  }
-  const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-  
+import {configureStore, combineReducers} from "@reduxjs/toolkit"  
+import postsReducer from "./reducers/postsReducer";
+
+
+
   function counterReducer(state = { value: 0 }, action: any) {
     switch (action.type) {
       case "counter/incremented":
@@ -19,5 +15,9 @@ import {legacy_createStore as createStore, combineReducers,compose,} from "redux
         return state;
     }
   }
-  
-  export const store = createStore(counterReducer);
+  const rootReducer = combineReducers({counterReducer,  posts: postsReducer, })
+
+
+  export const store = configureStore({
+    reducer: rootReducer,
+  });
