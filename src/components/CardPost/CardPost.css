@@ -1,4 +1,4 @@
-.posts {
+.postCard {
     width: 300px;
     height: 300px;
     border: solid 1px black;
@@ -7,18 +7,18 @@
     margin: 15px;
 }
 
-.image {
+.imgCard {
     width: 300px;
     height: 180px;
     border-radius: 8px;
     margin: 0 auto;
 }
 
-.title {
+.titleCard {
     font-size: 26px;
 }
 
-.text {
+.textCard {
     font-size: 14px;
     color: black;
     white-space: nowrap;
@@ -26,13 +26,7 @@
     overflow: hidden;
 }
 
-.date {
+.datteCard {
     font-size: 14px;
     color: black;
-}
-
-.pos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
 }

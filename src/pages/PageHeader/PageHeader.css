@@ -1,0 +1,27 @@
+.btnHeader {
+    font-weight: bold;
+    font-size: 28px;
+}
+
+.dark .btnHeader {
+    color: #503bae;
+}
+
+.activeLink {
+    color: #503bae;
+}
+
+.dark .activeLink {
+    color: aliceblue;
+}
+
+.wrapperHeader {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.dash {
+    border-right: 2px solid #5d5485;
+    height: 30px;
+}

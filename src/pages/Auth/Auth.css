@@ -1,0 +1,14 @@
+.authWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    color: #5947a9;
+    height: 100vh;
+}
+
+.authWrapper.dark {
+    background-color: #240915;
+    color: rgb(255, 254, 254);
+}
