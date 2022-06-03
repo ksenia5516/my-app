@@ -25,9 +25,11 @@ const Auth = () => {
   {tabName === 'login' ? (
       <Login onClick={onButtonClick} onConfirmClick={onClickRegister} />
   ):(
-      <Registration onClick={onButtonClick} onConfirmClick={onClickRegister} />
+      <Registration onClick={onButtonClick} onClickConfirm={onClickRegister} />
   )}
        </div>
   )
       }  
   export default Auth
+
+  

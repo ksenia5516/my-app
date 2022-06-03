@@ -12,7 +12,7 @@ const Header = () => {
                     <i className="fa-regular fa-user headerItem"></i>
                 </span>
                 <span className="headerUser">Username</span>
-            </div>;
+            </div>
             </div>
         </div>
     );

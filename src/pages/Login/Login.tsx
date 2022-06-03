@@ -20,7 +20,8 @@ const [passwordError, setPasswordError] = useState ('');
 const [formValid, setFormValid] = useState (false);
 
 const dispatch = useDispatch();
-const onClick = (isPlus: boolean) => {
+
+ const onClickDis = (isPlus: boolean) => {
     const PLUS_ACTION = { type: "counter/incremented" };
     const MINUS_ACTION = { type: "counter/decremented" };
     dispatch(isPlus ? PLUS_ACTION : MINUS_ACTION);

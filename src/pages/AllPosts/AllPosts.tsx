@@ -1,16 +1,18 @@
-import React from 'react';
+import React, {FC, useEffect} from 'react';
 import './AllPosts.css';
 import CardPost from '..//..//components//CardPost';
 import { useParams, Link, NavLink } from 'react-router-dom';
 import { Theme, useThemeContext } from '../../context/themeModeContext';
 import classNames from 'classnames';
-
+import CardList from '../../components/CardList';
+import { useDispatch, useSelector } from 'react-redux';
+import { loadData, PostsSelectors } from '..//..//redux//reducers//postsReducer'
 
 const AllPosts = () => {
   const {theme, onChangeTheme = () => {}} = useThemeContext();
   const isLightTheme = theme ===Theme.Light;
 
-  const date = [
+  const MOCK = [
     {
         id: 1,
         image: "https://cdn.pixabay.com/photo/2022/04/08/06/36/rock-7118843_1280.jpg",
@@ -49,10 +51,15 @@ const AllPosts = () => {
         title: "Lorem",
       },
     ]
+    const cardsList = useSelector((state) => PostsSelectors.getCards(state, ''))
+      const dispatch = useDispatch()
+      useEffect(()=>{
+        dispatch(loadData(MOCK))
+    }, [])
     return (
       <div className={classNames( {['postsContainer']:isLightTheme}, {['postsContainer dark'] : !isLightTheme})}>
       <div className='postsTitle'>My posts</div>
-         <CardPost data={date}/>
+         <CardList data = {CardList}/>
          </div>
      )
      }
